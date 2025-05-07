@@ -1,0 +1,231 @@
+{
+  "position": "top",
+  "layer": "top",
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  // "modules-right": ["network", "pulseaudio", "battery", "clock", "custom/power"],
+  "modules-right": [
+    "mpd",
+    "pulseaudio",
+    "bluetooth",
+    "network",
+    // "keyboard-state",
+    "battery",
+    "custom/pacman",
+    "custom/notification",
+    "group/hardware",
+    "power-profiles-daemon",
+    "idle_inhibitor",
+    "tray",
+    "clock",
+    "custom/power",
+  ],
+  // Workspaces
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    }
+  },
+  // Hyprland Window
+  "hyprland/window": {
+    "format": "{initialTitle}",
+    "icon": false,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "🌎 $1",
+      "(.*) - Brave": "$1",
+      "(.*) - Chromium": "$1",
+      "(.*) - Brave Search": "$1",
+      "(.*) - Outlook": "$1",
+      "(.*) Microsoft Teams": "$1"
+    },
+    "separate-outputs": true
+  },
+  "clock": {
+    "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "battery": {
+    "states": {
+      "warning": 40,
+      "critical": 15
+    },
+    "format": "<span size='13000' foreground='#a6e3a1'>{icon} </span> {capacity}%",
+    "format-warning": "<span size='13000' foreground='#e39d4d'>{icon} </span> {capacity}%",
+    "format-critical": "<span size='13000' foreground='#d95d61'>{icon} </span> {capacity}%",
+    "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
+    "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip-format": "{time}",
+    "interval": 5
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": " {signalStrength}%",
+    "format-ethernet": " {ipaddr}",
+    "format-disconnected": "Not connected", //An empty format will hide the module.
+    "tooltip-format": " {ifname} via {gwaddri}",
+    "tooltip-format-wifi": " {essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": " {ifname} ({ipaddr}/{cidr})",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50,
+    "on-click": "iwgtk"
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  // Keyboard State
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
+    }
+  },
+  // System tray
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 10
+  },
+  // System
+  "custom/system": {
+    "format": "",
+    "tooltip": false
+  },
+  // CPU
+  "cpu": {
+    "format": " {usage}% ",
+    "on-click": "kitty -e top"
+  },
+  // Memory
+  "memory": {
+    "format": " {}% ",
+    "on-click": "kitty -e top"
+  },
+  // Harddisc space used
+  "disk": {
+    "interval": 30,
+    "format": " {percentage_used}% ",
+    "path": "/",
+    "on-click": "kitty -e top"
+  },
+  "hyprland/language": {
+    "format": "/ K {short}"
+  },
+  // Other
+  "user": {
+    "format": "{user}",
+    "interval": 60,
+    "icon": false,
+  },
+  // Idle Inhibator
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    },
+    "tooltip-format-activated": "Idle Inhibitor Activated",
+    "tooltip-format-deactivated": "Idle Inhibitor Deactivated"
+  },
+  // Power Menu
+  "custom/power": {
+    "format": "",
+    "tooltip-format": "Powermenu",
+    "tooltip": true,
+    "menu": "on-click",
+    "menu-file": "~/.config/waybar/power_menu.xml",
+    "menu-actions": {
+      "shutdown": "shutdown now",
+      "reboot": "reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate",
+      "lock": "hypridle"
+    },
+  },
+  "custom/pacman": {
+    "format": "{}  ",
+    "return-type": "json",
+    "interval": 3600,
+    "exec": "~/.config/waybar/scripts/pacman_updates.py",
+    "on-click": "kitty -e 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar",
+    "signal": 8
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+      "dnd-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "escape": true
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  // GROUPS
+  // Group Hardware
+  "group/hardware": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-hardware",
+      "transition-left-to-right": false,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/system",
+      "disk",
+      "cpu",
+      "memory"
+      // "hyprland/language"
+    ]
+  },
+}

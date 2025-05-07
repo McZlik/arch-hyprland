@@ -4,5 +4,6 @@ McZlik's custom install scripts to automate the installating of hyprland on arch
 First setup based on [ML4W's hyprland-starter](https://github.com/mylinuxforwork/hyprland-starter)
 
 ## Todo
+- Find a way to install and enable gnome keyring, probably hard :c
 - Add corners setttings
   - Not sure if this is possible from dotfiles, maybe add a seperate script

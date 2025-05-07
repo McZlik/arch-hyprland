@@ -1,0 +1,199 @@
+@import "frappe.css";
+
+* {
+    font-family: "MesloLGS Nerd Font Mono Bold";
+    font-size: 16px;
+    min-height: 0;
+    font-weight: bold;
+}
+
+window#waybar {
+    /* background: transparent; */
+    /* background-color: @crust; */
+    background-color: alpha(@crust, 0.7);
+    color: @text;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+    border-bottom: 1px solid @overlay1;
+}
+
+#window {
+    margin: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+    color: @mauve;
+    border-top: 2px solid @mauve;
+}
+
+#workspaces button {
+    padding: 0 4px;
+    color: @text;
+}
+
+#workspaces button.focused {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: @rosewater;
+    border-top: 2px solid @rosewater;
+}
+
+#workspaces button.active {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: @mauve;
+    border-top: 2px solid @mauve;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#pulseaudio,
+#bluetooth,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#wireplumber,
+#tray,
+#network,
+#mode,
+#scratchpad,
+#power-profiles-daemon,
+#idle_inhibitor,
+#custom-system,
+#custom-power,
+#custom-notification {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#clock {
+    color: @maroon;
+    border-bottom: 2px solid @maroon;
+}
+
+#clock.date {
+    color: @mauve;
+    border-bottom: 2px solid @mauve;
+}
+
+#pulseaudio {
+    color: @blue;
+    border-bottom: 2px solid @blue;
+}
+
+#network {
+    color: @yellow;
+    border-bottom: 2px solid @yellow;
+}
+
+#bluetooth {
+    color: @sapphire;
+    border-bottom: 2px solid @sapphire;
+}
+
+#idle_inhibitor {
+    border-bottom: 2px solid @text;
+}
+
+#idle_inhibitor.activated {
+    color: @red;
+    border-bottom: 2px solid @red;
+}
+
+#battery {
+    color: @green;
+    border-bottom: 2px solid @green;
+}
+
+#power-profiles-daemon {
+    color: @green;
+    border-bottom: 2px solid @green;
+}
+
+#power-profiles-daemon.performance {
+    color: @maroon;
+    border-bottom: 2px solid @maroon;
+}
+
+#power-profiles-daemon.balanced {
+    color: @yellow;
+    border-bottom: 2px solid @yellow;
+}
+
+#power-profiles-daemon.power-saver {
+    color: @sky;
+    border-bottom: 2px solid @sky;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 0;
+}
+
+#custom-pacman.caution {
+    color: #a6e3a1;
+    /* Green */
+}
+
+#custom-pacman.warning {
+    color: #f9e2af;
+    /* Yellow */
+}
+
+#custom-pacman.critical {
+    color: #f38ba8;
+    /* Red */
+}
+
+
+/* Styling for menus */
+menu {
+    /* background: #1e1e2e; */
+    background-color: alpha(@crust, 0.8);
+    border: 1px solid @overlay1;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+menuitem {
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: @text;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+menuitem:hover {
+    background-color: alpha(@lavender, 0.5);
+    /* color: #cdd6f4; */
+}
+
+separator {
+    margin: 4px 0;
+    padding: 0;
+    background-color: @overlay1;
+    /* Customize the color */
+    min-height: 1px;
+    /* Adjust thickness */
+}
