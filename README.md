@@ -1,2 +1,8 @@
-# arch-hyprland
+# Arch Hyprland
 McZlik's custom install scripts to automate the installating of hyprland on arch based systems
+
+First setup based on [ML4W's hyprland-starter](https://github.com/mylinuxforwork/hyprland-starter)
+
+## Todo
+- Add corners setttings
+  - Not sure if this is possible from dotfiles, maybe add a seperate script
