@@ -38,6 +38,8 @@ _installSDDMTheme() {
         echo -e "[Theme]\nCurrent=corners" | sudo tee /etc/sddm.conf.d/theme.conf
         echo ":: Theme set in SDDM"
 
+        _updateThemeFiles
+
         # no config it
     elif [ $? -eq 130 ]; then
         echo ":: Installation canceled"
@@ -47,4 +49,28 @@ _installSDDMTheme() {
         echo ":: SDDM theme not installed"
         exit;
     fi
+}
+
+_updateThemeFiles() {
+    # Variables
+    THEME_DIR="/usr/share/sddm/themes/corners"
+    BACKGROUND_NAME="wallpaper.jpg"
+    SOURCE_IMAGE="$DIR_DOTFILES/.config/mczlik/wallpapers/$BACKGROUND_NAME"
+    DEST_IMAGE="$THEME_DIR/backgrounds/$BACKGROUND_NAME"
+    CONF_FILE="$THEME_DIR/theme.conf.user"
+    USER_CONF_FILE="$THEME_DIR/theme.conf.user"
+
+    # Create backgrounds directory if it doesn't exist
+    mkdir -p "$THEME_DIR/backgrounds"
+
+    # Copy background image
+    cp "$SOURCE_IMAGE" "$DEST_IMAGE"
+    echo ":: Copied $SOURCE_IMAGE to $DEST_IMAGE"
+
+    # Create or update theme.conf.user to set new background
+    echo "[General]" > "$USER_CONF_FILE"
+    echo "BgSource=backgrounds/$BACKGROUND_NAME" >> "$USER_CONF_FILE"
+    echo "FontSize=30" >> "$USER_CONF_FILE"
+    echo "TimeFormat=\"HH:mm\"" >> "$USER_CONF_FILE"
+    echo ":: Updated Corners theme settings"
 }
