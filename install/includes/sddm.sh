@@ -27,7 +27,7 @@ _installSDDMTheme() {
     echo
     if gum confirm "Would you like to install SDDM theme Corners?" ;then
         # Install requirements of Corner
-        pacman -Syu qt5-graphicaleffects qt5-svg qt5-quickcontrols2
+        sudo pacman -Syu qt5-graphicaleffects qt5-svg qt5-quickcontrols2
         
         yay -S --noconfirm sddm-theme-corners-git
         echo ":: SDDM theme Corners installed"
@@ -61,16 +61,16 @@ _updateThemeFiles() {
     mkdir -p "$THEME_DIR/backgrounds"
 
     # Copy background image
-    cp "$SOURCE_IMAGE" "$DEST_IMAGE"
+    sudo cp "$SOURCE_IMAGE" "$DEST_IMAGE"
     echo ":: Copied $SOURCE_IMAGE to $DEST_IMAGE"
 
     # Create or update theme.conf.user to set new background
-    echp ":: Generating theme settings at: $CONF_FILE"
-    echo "[General]" > "$CONF_FILE"
-    echo "BgSource=backgrounds/$BACKGROUND_NAME" >> "$CONF_FILE"
-    echo "FontSize=30" >> "$CONF_FILE"
-    echo "TimeFormat=\"HH:mm\"" >> "$CONF_FILE"
-    echo ":: Updated Corners theme settings"
+    echo ":: Generating theme settings at: $CONF_FILE"
+    sudo echo "[General]" > "$CONF_FILE"
+    sudo echo "BgSource=backgrounds/$BACKGROUND_NAME" >> "$CONF_FILE"
+    sudo echo "FontSize=30" >> "$CONF_FILE"
+    sudo echo "TimeFormat=\"HH:mm\"" >> "$CONF_FILE"
+    sudo echo ":: Updated Corners theme settings"
 }
 
 _installSDDM
