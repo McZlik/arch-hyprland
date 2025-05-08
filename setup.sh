@@ -102,7 +102,9 @@ if [ -d ~/Downloads/arch-hyprland ] ;then
 fi
 
 # Clone the packages
-git clone --depth 1 https://github.com/McZlik/arch-hyprland.git
+# git clone --depth 1 https://github.com/McZlik/arch-hyprland.git
+git clone --depth 1 --branch feature/first-setup https://github.com/McZlik/arch-hyprland.git
+
 echo ":: Installation files cloned into Downloads folder"
 
 # Change into the folder
