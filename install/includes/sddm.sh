@@ -56,7 +56,6 @@ _updateThemeFiles() {
     SOURCE_IMAGE="$DIR_DOTFILES/.config/mczlik/wallpapers/$BACKGROUND_NAME"
     DEST_IMAGE="$THEME_DIR/backgrounds/$BACKGROUND_NAME"
     CONF_FILE="$THEME_DIR/theme.conf.user"
-    USER_CONF_FILE="$THEME_DIR/theme.conf.user"
 
     # Create backgrounds directory if it doesn't exist
     mkdir -p "$THEME_DIR/backgrounds"
@@ -66,10 +65,11 @@ _updateThemeFiles() {
     echo ":: Copied $SOURCE_IMAGE to $DEST_IMAGE"
 
     # Create or update theme.conf.user to set new background
-    echo "[General]" > "$USER_CONF_FILE"
-    echo "BgSource=backgrounds/$BACKGROUND_NAME" >> "$USER_CONF_FILE"
-    echo "FontSize=30" >> "$USER_CONF_FILE"
-    echo "TimeFormat=\"HH:mm\"" >> "$USER_CONF_FILE"
+    echp ":: Generating theme settings at: $CONF_FILE"
+    echo "[General]" > "$CONF_FILE"
+    echo "BgSource=backgrounds/$BACKGROUND_NAME" >> "$CONF_FILE"
+    echo "FontSize=30" >> "$CONF_FILE"
+    echo "TimeFormat=\"HH:mm\"" >> "$CONF_FILE"
     echo ":: Updated Corners theme settings"
 }
 
