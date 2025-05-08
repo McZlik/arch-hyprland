@@ -66,10 +66,10 @@ _updateThemeFiles() {
 
     # Create or update theme.conf.user to set new background
     echo ":: Generating theme settings at: $CONF_FILE"
-    sudo echo "[General]" > "$CONF_FILE"
-    sudo echo "BgSource=backgrounds/$BACKGROUND_NAME" >> "$CONF_FILE"
-    sudo echo "FontSize=30" >> "$CONF_FILE"
-    sudo echo "TimeFormat=\"HH:mm\"" >> "$CONF_FILE"
+    echo "[General]" | sudo tee "$CONF_FILE" > /dev/null
+    echo "BgSource=backgrounds/$BACKGROUND_NAME" | sudo tee -a "$CONF_FILE" > /dev/null
+    echo "FontSize=30" | sudo tee -a "$CONF_FILE" > /dev/null
+    echo "TimeFormat=\"HH:mm\"" | sudo tee -a "$CONF_FILE" > /dev/null
     sudo echo ":: Updated Corners theme settings"
 }
 
