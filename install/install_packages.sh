@@ -29,10 +29,7 @@ installer_packages=(
     "ttf-fira-code" 
     "ttf-firacode-nerd"
     "nwg-look"
-    "catppuccin-gtk-theme-latte"
-    "catppuccin-gtk-theme-mocha"
     "firefox"
-    "hyprshot"
     "iwd"
     "bluez"
     "bluez-utils"
@@ -51,6 +48,9 @@ installer_packages=(
 
 installer_yay=(
     "iwgtk" 
+    "catppuccin-gtk-theme-latte"
+    "catppuccin-gtk-theme-mocha"
+    "hyprshot"
 )
 
 # PLEASE NOTE: Add more packages at the end of the following command

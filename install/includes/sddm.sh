@@ -27,7 +27,7 @@ _installSDDMTheme() {
     echo
     if gum confirm "Would you like to install SDDM theme Corners?" ;then
         # Install requirements of Corner
-        sudo pacman -Syu qt5-graphicaleffects qt5-svg qt5-quickcontrols2
+        sudo pacman -Syu --noconfirm qt5-graphicaleffects qt5-svg qt5-quickcontrols2
         
         yay -S --noconfirm sddm-theme-corners-git
         echo ":: SDDM theme Corners installed"
