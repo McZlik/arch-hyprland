@@ -64,7 +64,7 @@ _updateThemeFiles() {
     # Create or update theme.conf.user to set new background
     echo ":: Generating theme settings at: $CONF_FILE"
     echo "[General]" | sudo tee "$CONF_FILE"
-    echo "Background=ackgrounds/$BACKGROUND_NAME" | sudo tee -a "$CONF_FILE"
+    echo "Background=Backgrounds/$BACKGROUND_NAME" | sudo tee -a "$CONF_FILE"
     echo "FullBlur=true" | sudo tee -a "$CONF_FILE"
     echo "BlurRadius=50" | sudo tee -a "$CONF_FILE"
     echo "FormPosition=center" | sudo tee -a "$CONF_FILE"

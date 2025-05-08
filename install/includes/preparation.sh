@@ -7,5 +7,9 @@ if [ -d ~$DIR_VERSION ] ;then
     rm -rf $DIR_VERSION
 fi
 
+if [ ! -d $DIR_DOTFILES ] ;then
+    mkdir $DIR_DOTFILES
+fi
+
 cp -r dotfiles $DIR_DOTFILES
 echo ":: McZlik's Arch Hyprland configuration prepared in $DIR_VERSION"
