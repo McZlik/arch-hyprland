@@ -25,15 +25,12 @@ _installSDDMTheme() {
     figlet "SDDM Theme"
     echo -e "${NONE}"
     echo
-    if gum confirm "Would you like to install SDDM theme Corners?" ;then
-        # Install requirements of Corner
-        sudo pacman -Syu --noconfirm qt5-graphicaleffects qt5-svg qt5-quickcontrols2
-        
-        yay -S --noconfirm sddm-theme-corners-git
-        echo ":: SDDM theme Corners installed"
+    if gum confirm "Would you like to install SDDM theme Eucalyptus Drop?" ;then
+        yay -S --noconfirm sddm-eucalyptus-drop
+        echo ":: SDDM theme installed"
 
         sudo mkdir -p /etc/sddm.conf.d
-        echo -e "[Theme]\nCurrent=corners" | sudo tee /etc/sddm.conf.d/theme.conf
+        echo -e "[Theme]\nCurrent=eucalyptus-drop" | sudo tee /etc/sddm.conf.d/theme.conf
         echo ":: Theme set in SDDM"
 
         _updateThemeFiles
@@ -51,14 +48,14 @@ _installSDDMTheme() {
 
 _updateThemeFiles() {
     # Variables
-    THEME_DIR="/usr/share/sddm/themes/corners"
+    THEME_DIR="/usr/share/sddm/themes/eucalyptus-drop"
     BACKGROUND_NAME="wallpaper.jpg"
     SOURCE_IMAGE="$DIR_DOTFILES/.config/mczlik/wallpapers/$BACKGROUND_NAME"
     DEST_IMAGE="$THEME_DIR/backgrounds/$BACKGROUND_NAME"
     CONF_FILE="$THEME_DIR/theme.conf.user"
 
     # Create backgrounds directory if it doesn't exist
-    mkdir -p "$THEME_DIR/backgrounds"
+    mkdir -p "$THEME_DIR/Backgrounds"
 
     # Copy background image
     sudo cp "$SOURCE_IMAGE" "$DEST_IMAGE"
@@ -67,9 +64,11 @@ _updateThemeFiles() {
     # Create or update theme.conf.user to set new background
     echo ":: Generating theme settings at: $CONF_FILE"
     echo "[General]" | sudo tee "$CONF_FILE" > /dev/null
-    echo "BgSource=backgrounds/$BACKGROUND_NAME" | sudo tee -a "$CONF_FILE" > /dev/null
-    # echo "FontSize=30" | sudo tee -a "$CONF_FILE" > /dev/null
-    echo "TimeFormat=\"HH:mm\"" | sudo tee -a "$CONF_FILE" > /dev/null
+    echo "Background=ackgrounds/$BACKGROUND_NAME" | sudo tee -a "$CONF_FILE" > /dev/null
+    echo "FullBlur=true" | sudo tee -a "$CONF_FILE" > /dev/null
+    echo "BlurRadius=50" | sudo tee -a "$CONF_FILE" > /dev/null
+    echo "FormPosition=center" | sudo tee -a "$CONF_FILE" > /dev/null
+    echo "ForceHideCompletePassword=true" | sudo tee -a "$CONF_FILE" > /dev/null
     sudo echo ":: Updated Corners theme settings"
 }
 
