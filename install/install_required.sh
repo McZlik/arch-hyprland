@@ -7,7 +7,7 @@ installer_packages=(
     "stow"
     "figlet"
     "git"
-)wget
+)
 
 # Synchronizing package databases
 sudo pacman -Sy
