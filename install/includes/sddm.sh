@@ -1,5 +1,3 @@
-_installSDDM
-
 _installSDDM() {
     echo -e "${GREEN}"
     figlet "SDDM"
@@ -74,3 +72,5 @@ _updateThemeFiles() {
     echo "TimeFormat=\"HH:mm\"" >> "$USER_CONF_FILE"
     echo ":: Updated Corners theme settings"
 }
+
+_installSDDM
