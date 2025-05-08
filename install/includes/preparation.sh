@@ -7,5 +7,5 @@ if [ -d ~$DIR_VERSION ] ;then
     rm -rf $DIR_VERSION
 fi
 
-cp -r dotfiles $DIR_VERSION
+cp -r dotfiles $DIR_DOTFILES
 echo ":: McZlik's Arch Hyprland configuration prepared in $DIR_VERSION"
