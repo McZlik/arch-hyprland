@@ -17,11 +17,6 @@ VERSION=$(cat install/version)
 # ----------------------------------------------------- 
 source install/includes/library.sh
 
-# ----------------------------------------------------- 
-# Header
-# ----------------------------------------------------- 
-source install/includes/header.sh
-
 # Don't think we need this, we only focus on arch
 # # ----------------------------------------------------- 
 # # Check supported Linux distribution
@@ -38,6 +33,11 @@ source install/includes/header.sh
 # Install required packages
 # ----------------------------------------------------- 
 source install/install_required.sh
+
+# ----------------------------------------------------- 
+# Header
+# ----------------------------------------------------- 
+source install/includes/header.sh
 
 # ----------------------------------------------------- 
 # Confirm Start
