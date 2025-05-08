@@ -81,18 +81,28 @@ _installPackagesYay() {
 # Install Yay
 _installYay() {
     if sudo pacman -Qs yay > /dev/null ; then
-        echo "yay is already installed!"
+        echo ":: yay is already installed!"
     else
-        echo "yay is not installed. Will be installed now!"
+        echo ":: yay is not installed. Will be installed now!"
         _installPackages "base-devel"
         SCRIPT=$(realpath "$0")
         temp_path=$(dirname "$SCRIPT")
         echo $temp_path
+
+        # Remove existing folder
+        if [ -d ~/yay-git ] ;then
+            rm -rf ~/yay-git
+            echo ":: Existing yay folder removed"
+        fi
+
         git clone https://aur.archlinux.org/yay-git.git ~/yay-git
         cd ~/yay-git
         makepkg -si
         cd $temp_path
-        echo "yay has been installed successfully."
+        echo ":: yay has been installed successfully."
+
+        rm -rf ~/yay-git
+        echo ":: Yay folder removed"
     fi
 }
 
