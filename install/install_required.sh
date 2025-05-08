@@ -18,12 +18,12 @@ echo ":: Checking that required packages are installed..."
 _installPackages "${installer_packages[@]}";
 
 # Double check rsync
-if ! command -v rsync &> /dev/null; then
-    echo ":: Force rsync installation"
-    sudo pacman -S rsync --noconfirm
-else
-    echo ":: rsync double checked"
-fi
+# if ! command -v rsync &> /dev/null; then
+#     echo ":: Force rsync installation"
+#     sudo pacman -S rsync --noconfirm
+# else
+#     echo ":: rsync double checked"
+# fi
 echo
 
 # Install Yay
