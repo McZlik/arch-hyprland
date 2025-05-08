@@ -8,7 +8,7 @@ if [ -d ~$DIR_VERSION ] ;then
 fi
 
 if [ ! -d $DIR_DOTFILES ] ;then
-    mkdir $DIR_DOTFILES
+    mkdir -p $DIR_DOTFILES
 fi
 
 cp -r dotfiles/. $DIR_DOTFILES
