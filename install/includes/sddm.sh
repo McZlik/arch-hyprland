@@ -51,7 +51,7 @@ _updateThemeFiles() {
     THEME_DIR="/usr/share/sddm/themes/eucalyptus-drop"
     BACKGROUND_NAME="wallpaper.jpg"
     SOURCE_IMAGE="$DIR_DOTFILES/.config/mczlik/wallpapers/$BACKGROUND_NAME"
-    DEST_IMAGE="$THEME_DIR/backgrounds/$BACKGROUND_NAME"
+    DEST_IMAGE="$THEME_DIR/Backgrounds/$BACKGROUND_NAME"
     CONF_FILE="$THEME_DIR/theme.conf.user"
 
     # Create backgrounds directory if it doesn't exist
