@@ -16,19 +16,6 @@ GREEN='\033[0;32m'
 # Functions
 # ----------------------------------------------------- 
 
-# Function to prompt user for yes/no confirmation
-# _confirm() {
-#     while true; do
-#         read -rp "$1 [y/n]: " yn
-#         case $yn in
-#             [Yy]*) return 0;;
-#             [Nn]*) return 1;;
-#             []*) return 0;; # Find out how an empty answer works as yes as well
-#             *) echo "Please answer yes [y] or no [n]." ;;
-#         esac
-#     done
-# }
-
 # Check if package is installed
 _isInstalled() {
     package="$1";
