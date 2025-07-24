@@ -6,7 +6,11 @@ else
 fi
 echo -e "${NONE}"
 echo "This script will install the McZlik's Arch Hyprland setup."
-echo "NVIDIA GPUs aren't officially supported by Hyprland. But you can give it a try..."
+echo "Supports the following hardware:"
+echo " - CPUs: AMD and Intel"
+echo " - GPUs: AMD, NVIDIA (experimental support), and Intel"
+echo ""
+echo "NOTE: NVIDIA GPUs aren't officially supported by Hyprland, but we'll help configure it."
 echo
 if gum confirm "DO YOU WANT TO START NOW?" ;then
     echo

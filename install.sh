@@ -40,6 +40,11 @@ source install/includes/confirm.sh
 source install/includes/preparation.sh
 
 # ----------------------------------------------------- 
+# Hardware Detection
+# ----------------------------------------------------- 
+source install/includes/hardware_detection.sh
+
+# ----------------------------------------------------- 
 # Install Hyprland Packages
 # ----------------------------------------------------- 
 source install/install_packages.sh

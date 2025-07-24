@@ -1,6 +1,12 @@
 # ----------------------------------------------------- 
 # Install packages 
-# ----------------------------------------------------- 
+# -----------------------------------------------------
+
+# CPU microcode selection
+source includes/cpu_drivers.sh
+
+# GPU driver selection
+source includes/gpu_drivers.sh
 
 # TODO: Add vim or neovim back in?
 # Thunar or nautilus?
@@ -19,19 +25,6 @@ os_packages=(
   "xterm"
 )
 _installPackages "${os_packages[@]}";
-
-# Make this amd/intel-ucode switchable somehow
-cpu_packages=(
-  "amd-ucode"
-)
-_installPackages "${cpu_packages[@]}";
-
-gpu_packages=(
-  "mesa"
-  "vulkan-radeon"
-  "libva-mesa-driver"
-)
-_installPackages "${gpu_packages[@]}";
 
 connectivity_packages=(
 #  Networking
