@@ -24,7 +24,7 @@ _installPackages "${installer_packages[@]}";
 # else
 #     echo ":: rsync double checked"
 # fi
-echo
+#echo
 
 # Install Yay
 _installYay

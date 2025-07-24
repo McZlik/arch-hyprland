@@ -19,18 +19,6 @@ VERSION=$(cat install/version)
 # ----------------------------------------------------- 
 source install/includes/library.sh
 
-# Don't think we need this, we only focus on arch
-# # ----------------------------------------------------- 
-# # Check supported Linux distribution
-# # ----------------------------------------------------- 
-# source install/includes/checkdistro.sh
-
-# We have no distro specific library, all is arch
-# ----------------------------------------------------- 
-# Load Library for used distro
-# ----------------------------------------------------- 
-# source install/$installer/library.sh
-
 # ----------------------------------------------------- 
 # Install required packages
 # ----------------------------------------------------- 
