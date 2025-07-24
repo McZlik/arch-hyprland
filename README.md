@@ -2,7 +2,7 @@
 McZlik's custom install scripts to automate the installating of hyprland on arch based systems
 
 ## Inspiration
-First setup based on [ML4W's hyprland-starter](https://github.com/mylinuxforwork/hyprland-starter)
+First setup based on [ML4W's hyprland-starter](https://github.com/mylinuxforwork/hyprland-starter/tree/1.0.1)
 
 
 

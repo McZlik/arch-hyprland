@@ -49,16 +49,17 @@ source install/includes/hardware_detection.sh
 # ----------------------------------------------------- 
 source install/install_packages.sh
 
-# Don't think backup is needed if we do dotfiles with a dotfile managre
-# ----------------------------------------------------- 
+# Don't think backup is needed if we do dotfiles with a dotfile manager
+# -----------------------------------------------------
 # Create Backup
-# ----------------------------------------------------- 
+# -----------------------------------------------------
 # source install/includes/backup.sh
 
 # Not needed if we don't use any settings folders
-# ----------------------------------------------------- 
+# Also don't think this is needed if we use a dotfile manager
+# -----------------------------------------------------
 # Restore settings
-# ----------------------------------------------------- 
+# -----------------------------------------------------
 # source install/includes/restore.sh
 
 # Need dotfiles setup firt
