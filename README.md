@@ -19,6 +19,21 @@ bash <(curl -s https://raw.githubusercontent.com/McZlik/arch-hyprland/refs/heads
 ```
 
 ## Packages
+
+The script will install the following packages and the corresponding configurations:
+
+* Window Manager: hyprland
+* Status Bar: waybar
+* Launcher: rofi-wayland
+* Browser: Firefox
+* Terminal: kitty
+* Notification Service: SwayNC ~~dunst~~
+* File Manager: Nautilus ~~Thunar~~
+* xdg-desktop-portal-hyprland
+* qt5-wayland
+* qt6-wayland
+* Lock screen: hyprlock
+
 ## Key Bindings
 
 ## Todo
