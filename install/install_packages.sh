@@ -34,6 +34,7 @@ connectivity_packages=(
   "iwd"
   "dnsutils"
   "reflector"
+  "ufw"
 # Bluetooth
   "bluez"
   "bluez-utils"
@@ -69,6 +70,7 @@ _installPackages "${typography_packages[@]}";
 
 system_packages=(
   "pacman-contrib"
+  "flatpak"
   "pkgfile"
   "plocate"
   "smartmontools"
@@ -76,6 +78,10 @@ system_packages=(
   "haveged"
   "ntp"
   "brightnessctl"
+  "cups"
+  "system-config-printer"
+  "print-manager"
+  "tlp"
 )
 _installPackages "${system_packages[@]}";
 
@@ -101,7 +107,9 @@ hyprland_de_integration_packages=(
   "qt6-wayland"
   "gtk4"
   "libadwaita"
+  "xdg-desktop-portal"
   "xdg-desktop-portal-gtk"
+  "gnome-keyring"
 )
 _installPackages "${hyprland_de_integration_packages[@]}"
 
@@ -113,7 +121,7 @@ hyprland_shell_prompt_packages=(
 _installPackages "${hyprland_shell_prompt_packages[@]}"
 
 # --------------- Utilities & Tools ---------------
-hyprland_util_packages=(
+util_packages=(
   "kitty"
   "firefox"
   "blueman"
@@ -122,8 +130,10 @@ hyprland_util_packages=(
   "jq"
   "python-gobject"
   "xdotool"
+  "unzip"
+  "htop"
 )
-_installPackages "${hyprland_util_packages[@]}"
+_installPackages "${util_packages[@]}"
 
 installer_yay=(
   "iwgtk"
