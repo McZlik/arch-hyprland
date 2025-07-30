@@ -3,7 +3,7 @@
 # ----------------------------------------------------- 
 DIR_ROOT="$HOME/mczlik"
 DIR_VERSION="$DIR_ROOT/$VERSION"
-DIR_DOTFILES="$DIR_ROOT/dotfiles"
+DIR_DOTFILES="$HOME/dotfiles"
 
 # ----------------------------------------------------- 
 # Colors
