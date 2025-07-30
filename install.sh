@@ -86,10 +86,18 @@ source install/install_packages.sh
 # ----------------------------------------------------- 
 # source install/includes/copy.sh
 
+# TODO: Add a git clone script to collect the dotfiles
+# TODO: Redirect the below stow script into the stow.sh of the dotfile repo
+
+# -----------------------------------------------------
+# Download and install external dotfiles
+# -----------------------------------------------------
+source install/includes/dotfiles.sh
+
 # ----------------------------------------------------- 
 # Stow the configuration
 # ----------------------------------------------------- 
-source install/includes/stow.sh
+#source install/includes/stow.sh
 
 # ----------------------------------------------------- 
 # Enable all services
