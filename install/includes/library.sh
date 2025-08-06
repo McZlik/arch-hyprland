@@ -11,6 +11,7 @@ DIR_DOTFILES="$HOME/dotfiles"
 NONE='\033[0m'
 RED='\033[0;31m'
 GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
 
 # ----------------------------------------------------- 
 # Functions
@@ -42,7 +43,7 @@ _installPackages() {
         # echo "All pacman packages are already installed.";
         return;
     fi;
-    printf "Package not installed:\n%s\n" "${toInstall[@]}";
+    printf "Package not installed: %s\n" "${toInstall[@]}";
     sudo pacman --noconfirm -Syu "${toInstall[@]}";
 }
 
