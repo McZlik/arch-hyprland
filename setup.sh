@@ -8,7 +8,7 @@
 # Check if package is installed
 _isPackageInstalled() {
     package="$1";
-    check="$(sudo yay -Qs --color always "${package}" | grep "local" | grep "${package} ")";
+    check="$(sudo pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")";
     if [ -n "${check}" ] ; then
         echo 0; #'0' means 'true' in Bash
         return; #true
