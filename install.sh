@@ -37,7 +37,7 @@ source install/includes/confirm.sh
 # ----------------------------------------------------- 
 # Preparation
 # ----------------------------------------------------- 
-source install/includes/preparation.sh
+#source install/includes/preparation.sh
 
 # ----------------------------------------------------- 
 # Hardware Detection

@@ -5,26 +5,27 @@ echo -e "${GREEN}Dotfiles Installation${NONE}"
 DEFAULT_REPO="https://github.com/McZlik/dotfiles.git"
 
 echo "This will download and install dotfiles from: $DEFAULT_REPO"
-echo "Options:"
-echo "1. Use default repository"
-echo "2. Specify custom repository URL"
-echo "3. Skip dotfiles installation"
-echo ""
+echo "Select an option:"
 
-read -p "Enter your choice [1-3] (default: 1): " choice
+# Define choice options
+CHOICE_DEFAULT="Use default repository"
+CHOICE_CUSTOM="Specify custom repository URL"
+CHOICE_SKIP="Skip dotfiles installation"
+
+choice=$(gum choose --selected="$CHOICE_DEFAULT" "$CHOICE_DEFAULT" "$CHOICE_CUSTOM" "$CHOICE_SKIP")
 
 # Initialize flag for default repository usage
 USED_DEFAULT_REPO=true
 
 # Handle user choice
 case $choice in
-    1)
+    "$CHOICE_DEFAULT")
         echo "Using default repository: $DEFAULT_REPO"
         REPO_URL="$DEFAULT_REPO"
         USED_DEFAULT_REPO=true
         ;;
-    2)
-        read -p "Enter custom repository URL: " custom_url
+    "$CHOICE_CUSTOM")
+        custom_url=$(gum input --placeholder "Enter custom repository URL")
         if [[ -z "$custom_url" ]]; then
             echo "No URL provided, using default: $DEFAULT_REPO"
             REPO_URL="$DEFAULT_REPO"
@@ -35,7 +36,7 @@ case $choice in
             USED_DEFAULT_REPO=false
         fi
         ;;
-    3)
+    "$CHOICE_SKIP")
         echo "Skipping dotfiles installation"
         export USED_DEFAULT_REPO=false
         exit 0
@@ -49,6 +50,8 @@ esac
 
 # Export the flag so it can be used by the calling script
 export USED_DEFAULT_REPO
+
+echo "Downloading dotfiles to: ${$DIR_DOTFILES}"
 
 # Check if dotfiles directory already exists
 if [ -d "$DIR_DOTFILES" ]; then
