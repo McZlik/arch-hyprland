@@ -1,0 +1,13 @@
+{
+    "bluetooth": {
+        // "format-connected": "Connected",
+        // "format-disconnected": "disconnected",
+        // "format-disabled": "Disabled",
+        // "format": " {status}",
+        // "format-off": "Off",
+        // "format-on": "On",
+        "interval": 30,
+        "on-click": "blueman-manager",
+        "format-no-controller": "x"
+    }
+}

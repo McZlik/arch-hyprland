@@ -1,0 +1,19 @@
+@theme "catppuccin-frappe"
+
+configuration{
+    modi: "drun,run,window,combi";
+    font: "Fira Sans 12";
+    icon-theme: "kora";
+    show-icons: true;
+    terminal: "alacritty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "Apps";
+    display-filebrowser: "Files";
+    display-combi: " 🖥️  All ";
+    display-run: " 🏃  Run ";
+    display-window: " 🪟  Window";
+    sidebar-mode: true;
+}

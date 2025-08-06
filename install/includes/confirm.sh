@@ -1,0 +1,26 @@
+echo -e "${GREEN}"
+if [ -d ~/.config/mczlik ] ;then
+    figlet "Update"
+else
+    figlet "Installation"
+fi
+echo -e "${NONE}"
+echo "This script will install the McZlik's Arch Hyprland setup."
+echo "Supports the following hardware:"
+echo " - CPUs: AMD and Intel"
+echo " - GPUs: AMD, NVIDIA (experimental support), and Intel"
+echo ""
+echo "NOTE: NVIDIA GPUs aren't officially supported by Hyprland, but we'll help configure it."
+echo
+if gum confirm "DO YOU WANT TO START NOW?" ;then
+    echo
+    echo ":: Installing Hyprland and required packages"
+    echo
+elif [ $? -eq 130 ]; then
+    echo ":: Installation canceled"
+    exit 130
+else
+    echo
+    echo ":: Installation canceled"
+    exit;
+fi
