@@ -9,7 +9,7 @@ source install/includes/cpu_drivers.sh
 source install/includes/gpu_drivers.sh
 
 # TODO: Add vim or neovim back in?
-# Thunar or nautilus?
+# TODO: File explorer - Thunar or nautilus?
 
 echo -e "${GREEN}\nOS Packages${NONE}"
 os_packages=(

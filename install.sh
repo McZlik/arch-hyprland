@@ -35,11 +35,6 @@ source install/includes/header.sh
 source install/includes/confirm.sh
 
 # ----------------------------------------------------- 
-# Preparation
-# ----------------------------------------------------- 
-#source install/includes/preparation.sh
-
-# ----------------------------------------------------- 
 # Hardware Detection
 # ----------------------------------------------------- 
 source install/includes/hardware_detection.sh
@@ -49,55 +44,10 @@ source install/includes/hardware_detection.sh
 # ----------------------------------------------------- 
 source install/install_packages.sh
 
-# Don't think backup is needed if we do dotfiles with a dotfile manager
-# -----------------------------------------------------
-# Create Backup
-# -----------------------------------------------------
-# source install/includes/backup.sh
-
-# Not needed if we don't use any settings folders
-# Also don't think this is needed if we use a dotfile manager
-# -----------------------------------------------------
-# Restore settings
-# -----------------------------------------------------
-# source install/includes/restore.sh
-
-# Need dotfiles setup firt
-# ----------------------------------------------------- 
-# Keyboard
-# ----------------------------------------------------- 
-# source install/includes/keyboard.sh
-
-# Need dotfiles setup firt
-# ----------------------------------------------------- 
-# Screen Resolution
-# ----------------------------------------------------- 
-# source install/includes/monitor.sh
-
-# Copy has to be replaced with stow
-# ----------------------------------------------------- 
-# Copy the configuration
-# ----------------------------------------------------- 
-# source install/includes/copy.sh
-
-# TODO: Add a git clone script to collect the dotfiles
-# TODO: Redirect the below stow script into the stow.sh of the dotfile repo
-
 # -----------------------------------------------------
 # Download and install external dotfiles
 # -----------------------------------------------------
 source install/includes/dotfiles.sh
-
-# ----------------------------------------------------- 
-# Stow the configuration
-# ----------------------------------------------------- 
-#source install/includes/stow.sh
-
-# TODO: Do we need the set kvm settings?
-# -----------------------------------------------------
-# VM
-# -----------------------------------------------------
-# source install/includes/kvm.sh
 
 # ----------------------------------------------------- 
 # Enable all services

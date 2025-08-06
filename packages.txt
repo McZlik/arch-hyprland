@@ -1,5 +1,0 @@
-- tools
-gnome-keyring
-libgnome-keyring
-seahorse
-

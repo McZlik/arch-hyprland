@@ -86,6 +86,3 @@ else
 fi
 
 echo ":: Dotfiles setup completed"
-
-read -p "Press any key to continue..."
-
