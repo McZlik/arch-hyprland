@@ -11,6 +11,7 @@ source install/includes/gpu_drivers.sh
 # TODO: Add vim or neovim back in?
 # Thunar or nautilus?
 
+echo -e "${GREEN}\nOS Packages${NONE}"
 os_packages=(
   "base"
   "base-devel"
@@ -26,6 +27,25 @@ os_packages=(
 )
 _installPackages "${os_packages[@]}";
 
+echo -e "${GREEN}\nSystem Packages${NONE}"
+system_packages=(
+  "pacman-contrib"
+  "flatpak"
+  "pkgfile"
+  "plocate"
+  "smartmontools"
+  "power-profiles-daemon"
+  "haveged"
+  "ntp"
+  "brightnessctl"
+  "cups"
+  "system-config-printer"
+  "print-manager"
+#  "tlp" # More advanced package for power management
+)
+_installPackages "${system_packages[@]}";
+
+echo -e "${GREEN}\nConnectivity Packages${NONE}"
 connectivity_packages=(
 #  Networking
   "networkmanager"
@@ -41,6 +61,7 @@ connectivity_packages=(
 )
 _installPackages "${connectivity_packages[@]}";
 
+echo -e "${GREEN}\nAudio Packages${NONE}"
 audio_packages=(
   "pipewire"
   "pipewire-pulse"
@@ -55,6 +76,7 @@ audio_packages=(
 )
 _installPackages "${audio_packages[@]}";
 
+echo -e "${GREEN}\nTypography Packages${NONE}"
 typography_packages=(
   "ttf-font-awesome"
   "ttf-fira-sans"
@@ -68,24 +90,8 @@ typography_packages=(
 )
 _installPackages "${typography_packages[@]}";
 
-system_packages=(
-  "pacman-contrib"
-  "flatpak"
-  "pkgfile"
-  "plocate"
-  "smartmontools"
-  "power-profiles-daemon"
-  "haveged"
-  "ntp"
-  "brightnessctl"
-  "cups"
-  "system-config-printer"
-  "print-manager"
-  "tlp"
-)
-_installPackages "${system_packages[@]}";
-
 # --------------- Hyprland & Core Components ---------------
+echo -e "${GREEN}\nHyprland Packages${NONE}"
 hyprland_core_packages=(
   "hyprland"
   "hyprpaper"
@@ -99,6 +105,7 @@ hyprland_core_packages=(
 _installPackages "${hyprland_core_packages[@]}"
 
 # --------------- Desktop Environment/Integration ---------------
+echo -e "${GREEN}\nDE Integration Packages${NONE}"
 hyprland_de_integration_packages=(
   "rofi-wayland"
   "nautilus"
@@ -114,6 +121,7 @@ hyprland_de_integration_packages=(
 _installPackages "${hyprland_de_integration_packages[@]}"
 
 # --------------- Shell & Prompt ---------------
+echo -e "${GREEN}\nShell Packages${NONE}"
 hyprland_shell_prompt_packages=(
   "zsh"
   "starship"
@@ -121,6 +129,7 @@ hyprland_shell_prompt_packages=(
 _installPackages "${hyprland_shell_prompt_packages[@]}"
 
 # --------------- Utilities & Tools ---------------
+echo -e "${GREEN}\nUtility Packages${NONE}"
 util_packages=(
   "kitty"
   "firefox"
@@ -135,6 +144,7 @@ util_packages=(
 )
 _installPackages "${util_packages[@]}"
 
+echo -e "${GREEN}\nYay Packages${NONE}"
 installer_yay=(
   "iwgtk"
   "catppuccin-gtk-theme-latte"
