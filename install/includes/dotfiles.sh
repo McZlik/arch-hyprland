@@ -51,7 +51,7 @@ esac
 # Export the flag so it can be used by the calling script
 export USED_DEFAULT_REPO
 
-echo "Downloading dotfiles to: ${$DIR_DOTFILES}"
+echo "Downloading dotfiles to: $DIR_DOTFILES"
 
 # Check if dotfiles directory already exists
 if [ -d "$DIR_DOTFILES" ]; then
