@@ -6,7 +6,7 @@
 # ----------------------------------------------------- 
 
 # Check if package is installed
-_isPackageInstalled() {
+_isInstalledPacman() {
     package="$1";
     check="$(sudo pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")";
     if [ -n "${check}" ] ; then
@@ -21,7 +21,7 @@ _isPackageInstalled() {
 _installPackagesPacman() {
     toInstall=();
     for pkg; do
-        if [[ $(_isPackageInstalled "${pkg}") == 0 ]]; then
+        if [[ $(_isInstalledPacman "${pkg}") == 0 ]]; then
             echo "${pkg} is already installed.";
             continue;
         fi;
@@ -83,7 +83,10 @@ while true; do
     esac
 done
 
-echo "Installing required packages..."
+echo ":: Updating pacman"
+sudo pacman -Sy
+
+echo ":: Installing required packages..."
 _installPackagesPacman "${installer_packages_arch[@]}";
 
 # Create the Downloads folder if doesn't exists
