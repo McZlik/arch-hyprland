@@ -3,10 +3,10 @@
 # -----------------------------------------------------
 
 # CPU microcode selection
-source includes/cpu_drivers.sh
+source install/includes/cpu_drivers.sh
 
 # GPU driver selection
-source includes/gpu_drivers.sh
+source install/includes/gpu_drivers.sh
 
 # TODO: Add vim or neovim back in?
 # Thunar or nautilus?

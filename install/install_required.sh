@@ -27,4 +27,5 @@ _installPackages "${installer_packages[@]}";
 #echo
 
 # Install Yay
+echo ":: Checking that required packages are installed..."
 _installYay
