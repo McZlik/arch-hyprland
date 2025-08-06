@@ -1,5 +1,8 @@
 # GPU driver selection
-echo -e "${GREEN}\nGPU Selection${NONE}"
+echo -e "${GREEN}"
+figlet "GPU Driver"
+echo -e "${NONE}"
+
 echo "Detected GPU: $DETECTED_GPU"
 echo "Select your GPU manufacturer:"
 GPU_TYPE=$(gum choose --selected="$DETECTED_GPU" "AMD" "NVIDIA" "Intel")

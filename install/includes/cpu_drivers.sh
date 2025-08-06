@@ -1,5 +1,8 @@
 # CPU microcode selection
-echo -e "${GREEN}\nCPU Selection${NONE}"
+echo -e "${GREEN}"
+figlet "CPU Driver"
+echo -e "${NONE}"
+
 echo "Detected CPU: $DETECTED_CPU"
 echo "Select your CPU manufacturer:"
 CPU_TYPE=$(gum choose --selected="$DETECTED_CPU" "AMD" "Intel")

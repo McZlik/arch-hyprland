@@ -1,5 +1,6 @@
-echo ":: Dotfiles Configuration"
-echo -e "${GREEN}Dotfiles Installation${NONE}"
+echo -e "${GREEN}"
+figlet "Dotfiles"
+echo -e "${NONE}"
 
 # Default repository URL
 DEFAULT_REPO="https://github.com/McZlik/dotfiles.git"
