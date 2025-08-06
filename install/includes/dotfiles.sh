@@ -70,11 +70,22 @@ fi
 
 # Call stow.sh from the dotfiles repository
 if [ -f "$DIR_DOTFILES/stow.sh" ]; then
+    # Go into the dotfiles directory
+    SCRIPT=$(realpath "$0")
+    temp_path=$(dirname "$SCRIPT")
+    cd $DIR_DOTFILES
+
     echo "Running stow.sh from dotfiles repository"
-    bash "$DIR_DOTFILES/stow.sh"
+    bash "stow.sh"
+
+    # Go back to the dir we came from
+    cd $temp_path
 else
     echo "${RED}Error: stow.sh not found in dotfiles repository${NONE}"
     echo "Make sure you install/stow the dotfiles before usage"
 fi
 
 echo ":: Dotfiles setup completed"
+
+read -p "Press any key to continue..."
+
