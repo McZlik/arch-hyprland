@@ -74,12 +74,6 @@ source install/install_packages.sh
 # ----------------------------------------------------- 
 # source install/includes/monitor.sh
 
-# Need dotfiles setup firt
-# ----------------------------------------------------- 
-# KVM
-# ----------------------------------------------------- 
-# source install/includes/kvm.sh
-
 # Copy has to be replaced with stow
 # ----------------------------------------------------- 
 # Copy the configuration
@@ -98,6 +92,12 @@ source install/includes/dotfiles.sh
 # Stow the configuration
 # ----------------------------------------------------- 
 #source install/includes/stow.sh
+
+# TODO: Do we need the set kvm settings?
+# -----------------------------------------------------
+# VM
+# -----------------------------------------------------
+# source install/includes/kvm.sh
 
 # ----------------------------------------------------- 
 # Enable all services

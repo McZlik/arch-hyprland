@@ -11,33 +11,44 @@ echo "2. Specify custom repository URL"
 echo "3. Skip dotfiles installation"
 echo ""
 
-read -p "Enter your choice [1-3]: " choice
+read -p "Enter your choice [1-3] (default: 1): " choice
+
+# Initialize flag for default repository usage
+USED_DEFAULT_REPO=true
 
 # Handle user choice
 case $choice in
     1)
         echo "Using default repository: $DEFAULT_REPO"
         REPO_URL="$DEFAULT_REPO"
+        USED_DEFAULT_REPO=true
         ;;
     2)
         read -p "Enter custom repository URL: " custom_url
         if [[ -z "$custom_url" ]]; then
             echo "No URL provided, using default: $DEFAULT_REPO"
             REPO_URL="$DEFAULT_REPO"
+            USED_DEFAULT_REPO=true
         else
             REPO_URL="$custom_url"
             echo "Using custom repository: $REPO_URL"
+            USED_DEFAULT_REPO=false
         fi
         ;;
     3)
         echo "Skipping dotfiles installation"
+        export USED_DEFAULT_REPO=false
         exit 0
         ;;
     *)
-        echo "Invalid choice, using default: $DEFAULT_REPO"
+        echo "No/invalid choice, using default: $DEFAULT_REPO"
         REPO_URL="$DEFAULT_REPO"
+        USED_DEFAULT_REPO=true
         ;;
 esac
+
+# Export the flag so it can be used by the calling script
+export USED_DEFAULT_REPO
 
 # Check if dotfiles directory already exists
 if [ -d "$DIR_DOTFILES" ]; then
