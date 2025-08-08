@@ -68,6 +68,7 @@ audio_packages=(
   "wireplumber"
   "alsa-utils"
   "alsa-plugins"
+  "pipewire-alsa"
   "pavucontrol"
   "ffmpeg"
   "gst-plugins-bad"
