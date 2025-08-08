@@ -110,7 +110,6 @@ _installPackages "${hyprland_core_packages[@]}"
 echo -e "${GREEN}\nDE Integration Packages${NONE}"
 hyprland_de_integration_packages=(
   "rofi-wayland"
-  "nautilus"
   "nwg-look"
   "qt5-wayland"
   "qt6-wayland"
@@ -119,6 +118,30 @@ hyprland_de_integration_packages=(
   "xdg-desktop-portal"
   "xdg-desktop-portal-gtk"
   "gnome-keyring"
+)
+_installPackages "${hyprland_de_integration_packages[@]}"
+
+echo -e "${GREEN}\nFilemanager Packages${NONE}"
+hyprland_filemanager_packages=(
+  "nemo" # Filemanager
+  "nemo-fileroller"
+  "nemo-preview"
+  "nemo-admin"
+  "gvfs"
+  "udisks2"
+  "udiskie"
+  "gvfs-mtp"
+  "gvfs-smb"
+  "gvfs-nfs"
+  "ffmpegthumbnailer"
+  "webp-pixbuf-loader"
+  "libheif"
+  "poppler-glib"
+  "p7zip"
+  "unrar"
+  "exfatprogs"
+  "xdg-user-dirs"
+  "ntfs-3g"
 )
 _installPackages "${hyprland_de_integration_packages[@]}"
 

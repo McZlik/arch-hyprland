@@ -51,10 +51,10 @@ The script will install the following packages and the corresponding configurati
     
     Decide on NM backend: use wpa_supplicant (default) or iwd, but not both at the same time. If you stick to NetworkManager, iwgtk isn’t needed (it targets iwd directly).
 
-- [ ] Audio compatibility
+- [x] Audio compatibility
   - pipewire-alsa (routes legacy ALSA apps through PipeWire)
 
-- [ ] Files/Storage integration (for automount, trash, network shares in Nautilus)
+- [x] Files/Storage integration (for automount, trash, network shares in Nautilus)
   - gvfs
   - udisks2
   - gvfs-mtp (Android), optionally gvfs-smb (Windows shares), gvfs-nfs
