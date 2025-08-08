@@ -101,6 +101,7 @@ hyprland_core_packages=(
   "swaync"
   "swayosd"
   "waybar"
+  "hyprpolkitagent"
 )
 _installPackages "${hyprland_core_packages[@]}"
 
