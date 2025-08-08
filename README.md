@@ -59,7 +59,7 @@ The script will install the following packages and the corresponding configurati
   - udisks2
   - gvfs-mtp (Android), optionally gvfs-smb (Windows shares), gvfs-nfs
 
-- [ ] Clipboard (Wayland)
+- [x] Clipboard (Wayland)
   - wl-clipboard
   - cliphist (lightweight clipboard manager) or copyq
 

@@ -118,6 +118,8 @@ hyprland_de_integration_packages=(
   "xdg-desktop-portal"
   "xdg-desktop-portal-gtk"
   "gnome-keyring"
+  "wl-clipboard"
+  "cliphist"
 )
 _installPackages "${hyprland_de_integration_packages[@]}"
 
